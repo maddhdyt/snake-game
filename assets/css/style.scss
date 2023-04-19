@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d6e6fd;
+}
+.wrapper {
+  width: 85vw;
+  height: fit-content;
+  background-color: #323239;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.game-details {
+  width: 100%;
+  background-color: #546684;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  span {
+    font-size: 14px;
+  }
+}
+.play-board {
+  width: 100%;
+  aspect-ratio: 1/1;
+  flex-grow: 1;
+  background-color: #213351;
+  display: grid;
+  grid-template: repeat(40, 1fr) / repeat(40, 1fr);
+  .food {
+    background-color: red;
+    filter: blur(2px);
+    border-radius: 100%;
+  }
+  .snake {
+    background-color: rgb(109, 198, 250);
+  }
+}
+.controls {
+  width: 100%;
+  height: 60px;
+  background-color: #546684;
+  display: flex;
+  justify-content: center;
+  .ctrl-box{
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all 400ms;
+    cursor: pointer;
+    i {
+      font-size: 24px;
+    }
+    &:hover {
+      background-color: #ffffff38;
+    }
+  }
+}
+@media (min-width: 546px) {
+  .wrapper {
+    width: 85vw;
+  }
+}
+@media (min-width: 746px) {
+  .wrapper {
+    width: 75vw;
+  }
+}
+@media (min-width: 1046px) {
+  .wrapper {
+    width: 50vw;
+  }
+  .controls{
+    display: none;
+  }
+}
+@media (min-width: 1246px) {
+  .wrapper {
+    width: 30vw;
+  }
+}
