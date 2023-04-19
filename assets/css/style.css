@@ -2,55 +2,37 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 
 body {
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: #d6e6fd;
 }
 
 .wrapper {
   width: 85vw;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #323239;
   border-radius: 4px;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .game-details {
   width: 100%;
   background-color: #546684;
   padding: 20px 27px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   color: #fff;
 }
-
 .game-details span {
   font-size: 14px;
 }
@@ -58,64 +40,42 @@ body {
 .play-board {
   width: 100%;
   aspect-ratio: 1/1;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   background-color: #213351;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[40];
-  -ms-grid-columns: (1fr)[40];
-      grid-template: repeat(40, 1fr)/repeat(40, 1fr);
+  grid-template: repeat(40, 1fr)/repeat(40, 1fr);
 }
-
 .play-board .food {
-  background-color: red;
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
-  border-radius: 100%;
+  overflow: hidden;
+  background-image: url("../icon/pelet.png");
+  background-size: cover;
 }
-
 .play-board .snake {
-  background-color: #6dc6fa;
+  background-color: #e22828;
 }
 
 .controls {
   width: 100%;
   height: 60px;
   background-color: #546684;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .controls .ctrl-box {
   height: 100%;
   aspect-ratio: 1/1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   color: #fff;
-  -webkit-transition: all 400ms;
   transition: all 400ms;
   cursor: pointer;
 }
-
 .controls .ctrl-box i {
   font-size: 24px;
 }
-
 .controls .ctrl-box:hover {
-  background-color: #ffffff38;
+  background-color: rgba(255, 255, 255, 0.2196078431);
 }
 
 @media (min-width: 546px) {
@@ -123,13 +83,11 @@ body {
     width: 85vw;
   }
 }
-
 @media (min-width: 746px) {
   .wrapper {
     width: 75vw;
   }
 }
-
 @media (min-width: 1046px) {
   .wrapper {
     width: 50vw;
@@ -138,10 +96,8 @@ body {
     display: none;
   }
 }
-
 @media (min-width: 1246px) {
   .wrapper {
     width: 30vw;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

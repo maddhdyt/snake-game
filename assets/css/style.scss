@@ -42,12 +42,12 @@ body {
   display: grid;
   grid-template: repeat(40, 1fr) / repeat(40, 1fr);
   .food {
-    background-color: red;
-    filter: blur(2px);
-    border-radius: 100%;
+    overflow: hidden;
+    background-image: url('../icon/pelet.png');
+    background-size: cover;
   }
   .snake {
-    background-color: rgb(109, 198, 250);
+    background-color: #e22828;
   }
 }
 .controls {

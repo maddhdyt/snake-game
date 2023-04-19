@@ -59,7 +59,7 @@ controls.forEach(key => {
 
 const initGame = () => {
     if (gameOver) return handleGameOver();
-    let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
+    let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX};"></div>`;
 
     // checking if snake hit the food
     if (snakeX === foodX && snakeY === foodY) {
