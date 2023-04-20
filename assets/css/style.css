@@ -77,13 +77,11 @@ body {
 .ctrl-box i {
   font-size: 24px;
 }
-.ctrl-box:hover {
-  background-color: rgba(255, 255, 255, 0.2196078431);
-}
 
 .up-down {
   display: flex;
   flex-direction: column;
+  gap: 50px;
 }
 
 @media (min-width: 546px) {
