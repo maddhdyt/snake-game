@@ -15,7 +15,7 @@ body {
 }
 
 .wrapper {
-  width: 85vw;
+  width: 95vw;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #323239;
@@ -64,8 +64,8 @@ body {
 
 .ctrl-box {
   height: 100%;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,6 @@ body {
 .up-down {
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
 @media (min-width: 546px) {
@@ -101,9 +100,12 @@ body {
   .wrapper {
     width: 50vw;
   }
+  .controls {
+    display: none;
+  }
 }
 @media (min-width: 1246px) {
   .wrapper {
-    width: 30vw;
+    width: 40vw;
   }
 }/*# sourceMappingURL=style.css.map */

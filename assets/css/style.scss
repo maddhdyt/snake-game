@@ -15,7 +15,7 @@ body {
   background-color: #d6e6fd;
 }
 .wrapper {
-  width: 85vw;
+  width: 95vw;
   height: fit-content;
   background-color: #323239;
   border-radius: 4px;
@@ -59,8 +59,8 @@ body {
 }
 .ctrl-box{
   height: 100%;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,8 +77,7 @@ body {
 }
 .up-down {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  flex-direction: column;;
 }
 @media (min-width: 546px) {
   .wrapper {
@@ -94,10 +93,12 @@ body {
   .wrapper {
     width: 50vw;
   }
- 
+ .controls {
+  display: none;
+ }
 }
 @media (min-width: 1246px) {
   .wrapper {
-    width: 30vw;
+    width: 40vw;
   }
 }

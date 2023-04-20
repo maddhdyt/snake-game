@@ -36,19 +36,39 @@ const handleGameOver = () => {
 
 }
 
+// const changeDirection = (e) => {
+//     // Changing velocity value based on key press
+//     if (e.key === "w" || e.key === "ArrowUp" && velocityY != 1) {
+//         velocityX = 0;
+//         velocityY = -1;
+//     } else if (e.key === "s" || e.key === "ArrowDown" && velocityY != -1) {
+//         velocityX = 0;
+//         velocityY = 1;
+//     } else if (e.key === "a" || e.key === "ArrowLeft" && velocityX != 1) {
+//         velocityX = -1;
+//         velocityY = 0;
+//     } else if (e.key === "d" || e.key === "ArrowRight" && velocityX != -1) {
+//         velocityX = 1;
+//         velocityY = 0;
+//     }
+// }
+
 const changeDirection = (e) => {
     // Changing velocity value based on key press
-    if (e.key === "w" || e.key === "W" || e.key === "ArrowUp" && velocityY != 1) {
+    if (e.key === "w" | e.key === "ArrowUp" && velocityY != 1) {
         velocityX = 0;
         velocityY = -1;
-    } else if (e.key === "s" || e.key === "S" || e.key === "ArrowDown" && velocityY != -1) {
+    } else if (e.key === "s" | e.key === "ArrowDown" && velocityY != -1) {
         velocityX = 0;
         velocityY = 1;
-    } else if (e.key === "a" || e.key === "A" || e.key === "ArrowLeft" && velocityX != 1) {
+    } else if (e.key === "a" | e.key === "ArrowLeft" && velocityX != 1) {
         velocityX = -1;
         velocityY = 0;
-    } else if (e.key === "d" || e.key === "D" || e.key === "ArrowRight" && velocityX != -1) {
+    } else if (e.key === "d" || e.key === "ArrowRight" && velocityX != -1) {
         velocityX = 1;
+        velocityY = 0;
+    } else if (e.key === "p") {
+        velocityX = 0;
         velocityY = 0;
     }
 }
