@@ -18,14 +18,14 @@ highScoreElement.innerText = `High Score: ${highScore}`;
 
 const changeFoodPosition = () => {
     // Passing a random 0 - 40 value as food position
-    foodX = Math.floor(Math.random() * 40) + 1;
-    foodY = Math.floor(Math.random() * 40) + 1;
+    foodX = Math.floor(Math.random() * 35) + 1;
+    foodY = Math.floor(Math.random() * 35) + 1;
 }
 
 const changeSnakePosition = () => {
     // Passing a random 0 - 40 value as food position
-    snakeX = Math.floor(Math.random() * 40) + 1;
-    snakeY = Math.floor(Math.random() * 40) + 1;
+    snakeX = Math.floor(Math.random() * 35) + 1;
+    snakeY = Math.floor(Math.random() * 35) + 1;
 }
 
 const handleGameOver = () => {
@@ -61,7 +61,7 @@ const initGame = () => {
     if (gameOver) return handleGameOver();
     let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX};"></div>`;
 
-    // checking if snake hit the food
+    // if hit the food
     if (snakeX === foodX && snakeY === foodY) {
         changeFoodPosition();
         snakeBody.push([foodX, foodY]); // pushing food position to snake body array
@@ -85,12 +85,12 @@ const initGame = () => {
     snakeY += velocityY;
 
     // Checking if the snake head's head is out of wall, setting gameOver to true
-    if(snakeX <= 0 || snakeX > 40 || snakeY <= 0 || snakeY > 40) {
+    if(snakeX <= 0 || snakeX > 35 || snakeY <= 0 || snakeY > 35) {
         gameOver = true;
     }
     for (let i = 0; i < snakeBody.length; i++) {
         // Adding a div for each part of the snake body
-        htmlMarkup += `<div class="snake" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
+        htmlMarkup += `<div class="snake head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
         // game over when snake hit the body
         if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
             gameOver = true;
