@@ -121,5 +121,5 @@ const initGame = () => {
 
 changeSnakePosition();
 changeFoodPosition();
-setIntervalId = setInterval(initGame, 85);
+setIntervalId = setInterval(initGame, 100);
 document.addEventListener("keydown", changeDirection);
