@@ -64,7 +64,7 @@ const changeDirection = (e) => {
     } else if (e.key === "a" | e.key === "ArrowLeft" && velocityX != 1) {
         velocityX = -1;
         velocityY = 0;
-    } else if (e.key === "d" || e.key === "ArrowRight" && velocityX != -1) {
+    } else if (e.key === "d" | e.key === "ArrowRight" && velocityX != -1) {
         velocityX = 1;
         velocityY = 0;
     } else if (e.key === "p") {
