@@ -1,3 +1,36 @@
+@mixin flex($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin grid($col, $row, $gap) {
+  display: grid;
+  grid-template-columns: repeat($col, minmax(0, 1fr));
+  grid-template-rows: repeat($row, minmax(0, 1fr));
+  gap: $gap;
+}
+
+@mixin col_span($span_num) {
+  grid-column: span $span_num / span $span_num;
+}
+
+@mixin img_fit() {
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@mixin full() {
+  width: 100%;
+  height: 100%;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,500&display=swap");
 
 * {
@@ -8,20 +41,27 @@
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #d6e6fd;
+  overflow-x: hidden;
 }
 .wrapper {
-  width: 95vw;
+  @include grid(6, 1, 10px);
+  margin: 20px 10px;
+}
+.playground {
+  @include col_span(6);
   height: fit-content;
   background-color: #323239;
   border-radius: 4px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  div{
+    &:nth-child(4){
+      background-size: cover;
+      background-image: url('../icon/icon.png');
+    }
+  }
 }
 .game-details {
   width: 100%;
@@ -36,18 +76,18 @@ body {
 }
 .play-board {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 48/30;
   flex-grow: 1;
   background-color: #213351;
   display: grid;
-  grid-template: repeat(35, 1fr) / repeat(35, 1fr);
+  grid-template: repeat(30, 1fr) / repeat(48, 1fr);
   .food {
     overflow: hidden;
-    background-image: url('../icon/pelet.png');
+    background-image: url("../icon/pelet.png");
     background-size: cover;
   }
   .snake {
-    background-color: #08ceff;
+    background-color: #e82a0c;
   }
 }
 .controls {
@@ -57,7 +97,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.ctrl-box{
+.ctrl-box {
   height: 100%;
   height: 50px;
   width: 50px;
@@ -77,26 +117,125 @@ body {
   flex-direction: column;
   gap: 50px;
 }
-@media (min-width: 546px) {
-  .wrapper {
-    width: 85vw;
+
+.game-guide {
+  @include col_span(6);
+  display: none;
+  order: 3;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #546684;
+  border-radius: 4px;
+  h1 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+  .key {
+    margin-bottom: 25px;
+    p {
+      font-size: 14px;
+      color: #fff;
+    }
+    .icon-group {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+      gap: 10px;
+      span {
+        font-size: 12px;
+        color: #fff;
+      }
+      .icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 4px;
+        border: 1px solid #ffffff;
+        background-color: #ffffff2b;
+        margin-top: 5px;
+        @include flex(center, center);
+        i {
+          color: #fff;
+        }
+        p {
+          font-size: 14px;
+          color: #fff;
+          font-weight: 700;
+        }
+      }
+    }
   }
 }
-@media (min-width: 746px) {
-  .wrapper {
-    width: 75vw;
+
+.game-setting {
+  @include col_span(6);
+  background-color: #546684;
+  border-radius: 4px;
+  padding: 20px;
+  order: 2;
+  h2 {
+    font-size: 18px;
+    color: #ffff;
+    font-weight: 600;
   }
+  .btn {
+    width: 100%;
+    font-size: 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .btn-restart {
+    background-color: #346bc9
+  }
+  .btn-pause {
+    background-color: #cd3119;
+    i {
+      position: relative;
+      font-size: 18px;
+    }
+  }
+}
+@media (min-width: 546px) {
+}
+@media (min-width: 746px) {
 }
 @media (min-width: 1046px) {
   .wrapper {
-    width: 50vw;
+    margin: 20px 0;
   }
- .controls {
-  display: none;
- }
+  .controls {
+    display: none;
+  }
+  .playground {
+    @include col_span(4);
+    order: 2;
+  }
+  .game-guide {
+    order: 1 !important;
+    @include col_span(1);
+    display: block;
+  }
+  .game-setting {
+    order: 3 !important;
+    @include col_span(1);
+    margin-right: 20px;
+  }
+  
 }
 @media (min-width: 1246px) {
-  .wrapper {
-    width: 40vw;
-  }
 }

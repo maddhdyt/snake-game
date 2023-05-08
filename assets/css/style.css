@@ -7,15 +7,20 @@
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #d6e6fd;
+  overflow-x: hidden;
 }
 
 .wrapper {
-  width: 95vw;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 10px;
+}
+
+.playground {
+  grid-column: span 6/span 6;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #323239;
@@ -23,6 +28,10 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+.playground div:nth-child(4) {
+  background-size: cover;
+  background-image: url("../icon/icon.png");
 }
 
 .game-details {
@@ -39,11 +48,11 @@ body {
 
 .play-board {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 48/30;
   flex-grow: 1;
   background-color: #213351;
   display: grid;
-  grid-template: repeat(35, 1fr)/repeat(35, 1fr);
+  grid-template: repeat(30, 1fr)/repeat(48, 1fr);
 }
 .play-board .food {
   overflow: hidden;
@@ -51,7 +60,7 @@ body {
   background-size: cover;
 }
 .play-board .snake {
-  background-color: #08ceff;
+  background-color: #e82a0c;
 }
 
 .controls {
@@ -84,26 +93,120 @@ body {
   gap: 50px;
 }
 
-@media (min-width: 546px) {
-  .wrapper {
-    width: 85vw;
-  }
+.game-guide {
+  grid-column: span 6/span 6;
+  display: none;
+  order: 3;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #546684;
+  border-radius: 4px;
 }
-@media (min-width: 746px) {
-  .wrapper {
-    width: 75vw;
-  }
+.game-guide h1 {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
 }
+.game-guide h2 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+.game-guide .key {
+  margin-bottom: 25px;
+}
+.game-guide .key p {
+  font-size: 14px;
+  color: #fff;
+}
+.game-guide .key .icon-group {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  gap: 10px;
+}
+.game-guide .key .icon-group span {
+  font-size: 12px;
+  color: #fff;
+}
+.game-guide .key .icon-group .icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.168627451);
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game-guide .key .icon-group .icon i {
+  color: #fff;
+}
+.game-guide .key .icon-group .icon p {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.game-setting {
+  grid-column: span 6/span 6;
+  background-color: #546684;
+  border-radius: 4px;
+  padding: 20px;
+  order: 2;
+}
+.game-setting h2 {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+}
+.game-setting .btn {
+  width: 100%;
+  font-size: 12px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.game-setting .btn-restart {
+  background-color: #346bc9;
+}
+.game-setting .btn-pause {
+  background-color: #cd3119;
+}
+.game-setting .btn-pause i {
+  position: relative;
+  font-size: 18px;
+}
+
 @media (min-width: 1046px) {
   .wrapper {
-    width: 50vw;
+    margin: 20px 0;
   }
   .controls {
     display: none;
   }
-}
-@media (min-width: 1246px) {
-  .wrapper {
-    width: 40vw;
+  .playground {
+    grid-column: span 4/span 4;
+    order: 2;
+  }
+  .game-guide {
+    order: 1 !important;
+    grid-column: span 1/span 1;
+    display: block;
+  }
+  .game-setting {
+    order: 3 !important;
+    grid-column: span 1/span 1;
+    margin-right: 20px;
   }
 }/*# sourceMappingURL=style.css.map */

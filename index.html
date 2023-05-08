@@ -14,20 +14,83 @@
 
 <body>
     <div class="wrapper">
-        <div class="game-details">
-            <span class="score">Score: 0</span>
-            <span class="highscore">High Score : 0</span>
-        </div>
-        <div class="play-board">
-
-        </div>
-        <div class="controls">
-            <div data-key="a" class="ctrl-box"><i class='bx bx-chevron-left'></i></div>
-            <div class="up-down">
-                <div data-key="w" class="ctrl-box"><i class='bx bx-chevron-up'></i></div>
-                <div data-key="s" class="ctrl-box"><i class='bx bx-chevron-down'></i></div>
+        <div class="game-guide">
+            <h1>snakeGame</h1>
+            <h2>How to Play?</h2>
+            <div class="key">
+                <p>Move Top</p>
+                <div class="icon-group">
+                    <div class="icon">
+                        <p>w</p>
+                    </div>
+                    <span>or</span>
+                    <div class="icon">
+                        <i class='bx bx-up-arrow-alt'></i>
+                    </div>
+                </div>
             </div>
-            <div data-key="d" class="ctrl-box"><i class='bx bx-chevron-right'></i></div>
+            <div class="key">
+                <p>Move Down</p>
+                <div class="icon-group">
+                    <div class="icon">
+                        <p>s</p>
+                    </div>
+                    <span>or</span>
+                    <div class="icon">
+                        <i class='bx bx-down-arrow-alt'></i>
+                    </div>
+                </div>
+            </div>
+            <div class="key">
+                <p>Move Right</p>
+                <div class="icon-group">
+                    <div class="icon">
+                        <p>d</p>
+                    </div>
+                    <span>or</span>
+                    <div class="icon">
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                </div>
+            </div>
+            <div class="key">
+                <p>Move Left</p>
+                <div class="icon-group">
+                    <div class="icon">
+                        <p>a</p>
+                    </div>
+                    <span>or</span>
+                    <div class="icon">
+                        <i class='bx bx-left-arrow-alt'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="playground">
+            <div class="game-details">
+                <span class="score">Score: 0</span>
+                <span class="highscore">High Score : 0</span>
+            </div>
+            <div class="play-board">
+
+            </div>
+            <div class="controls">
+                <div data-key="a" class="ctrl-box"><i class='bx bx-chevron-left'></i></div>
+                <div class="up-down">
+                    <div data-key="w" class="ctrl-box"><i class='bx bx-chevron-up'></i></div>
+                    <div data-key="s" class="ctrl-box"><i class='bx bx-chevron-down'></i></div>
+                </div>
+                <div data-key="d" class="ctrl-box"><i class='bx bx-chevron-right'></i></div>
+            </div>
+        </div>
+        <div class="game-setting">
+            <h2>Menu</h2>
+            <button class="btn btn-restart">
+                Restart
+            </button>
+            <button class="btn btn-pause">
+                <i class='bx bx-pause-circle'></i>
+            </button>
         </div>
     </div>
 </body>
